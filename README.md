@@ -17,7 +17,7 @@ my compact Cursor / AI collaboration rule set: change little, confirm first, ver
 - Ask when unsure: For APIs, business logic, or multiple reasonable implementations, ask or restate for confirmation first — never code from guesses.
 
 # Verification & Labeling
-- For version numbers, API usage, recent events, or specific numeric facts: verify online and cite sources (link + date).
+- For conclusions that need factual evidence: verify and cite sources (web links / file paths / other references).
 - Distinguish conclusions from speculation in replies; clearly mark uncertainty. If you don't know, say so — never invent answers.
 
 # Reply Style
@@ -42,7 +42,7 @@ my compact Cursor / AI collaboration rule set: change little, confirm first, ver
 - 遇到接口、业务逻辑、多种合理实现方式等不确定之处，先问或先复述确认，不凭猜测编码。
 
 # 求证与标注
-- 涉及版本号、API 用法、最新事件、具体数字数据，必须联网求证并注明来源（链接+日期）。
+- 对于结论需要有事实证据，必须求证并注明来源（网络链接 / 文件地址 / 其他出处）。
 - 回复中区分"结论"与"推测"，不确定处需明确标注；不知道时直言未知，不编造答案。
 
 # 回复风格
