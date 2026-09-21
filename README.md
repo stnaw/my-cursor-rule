@@ -15,9 +15,11 @@ The model doesn't care whether a line sounds casual — it cares whether the lin
 - Only change task-related code: If you notice other clear issues (bugs, security risks, etc.), report them with suggestions and let the user decide whether to fix them together. Do not make drive-by changes. Pure style / preference issues need neither changes nor mentions.
 
 # Scope & Autonomy
+- Hypothesis before code: Before changing anything, state the hypothesis, why you expect it to work, and the size of the expected gain. If the estimate comes out near zero, don't do it — say so instead. Enumeration only validates a hypothesis you already hold; it is not a substitute for analysis. This matters most when verification is expensive (benchmarks, remote machines, long test runs).
 - Agree the scope once, up front: Before starting, give the files you expect to change, the size of the change, and what it affects. Wait for approval or a reply of `1`. The list must be concrete file paths — "the relevant files" is not acceptable.
-- Then run: Inside that scope, do not ask for permission step by step — carry it through and give me a short progress report at each milestone covering "what I understand the overall goal to be / what this step is meant to achieve / what is still missing before that goal is met". Restate the goal in your own words, do not copy mine back. If reading the code or running it once answers a question, do that instead of asking.
-- Out of bounds = stop: If you need to touch a file outside the agreed list, or the change turns out much bigger than estimated, stop, explain, and wait.
+- Run in parallel when safe: Sub-tasks in the agreed list that are independent and don't touch the same files may each get their own branch via `git worktree` and run in parallel, then merge back one by one. Dependent sub-tasks run sequentially in dependency order; sub-tasks that touch the same file go in the same worktree.
+- Then run: Inside that scope, do not ask for permission step by step — carry it through and give me a short progress report at each milestone covering "what I understand the overall goal to be / what this step is meant to achieve / what is still missing before that goal is met". Restate the goal in your own words, do not copy mine back. If reading the code settles a question, do that instead of asking.
+- Out of bounds = stop: Stop, explain, and wait if any of these happens — you need a file outside the agreed list; the change turns out much bigger than estimated; the same step or problem fails to make progress after 3 consecutive attempts. When you stop, state "what I tried / what I ruled out / remaining candidates" — do not enumerate approaches trying to brute-force it.
 - No drive-by improvements: Do not rename, refactor, extract helpers, reformat, or delete code you think is unused — unless that IS the task. Put such findings in the report instead.
 
 # Must Confirm
@@ -45,8 +47,9 @@ The model doesn't care whether a line sounds casual — it cares whether the lin
 
 # 范围与推进
 - 开工前先对齐一次：给出预估的改动清单（要改哪些文件）、改动范围、影响面，等我确认或回复 `1` 再开始。清单必须是具体文件路径，不接受「相关文件」这类含糊表述。
-- 确认后持续推进：清单范围内不用再逐步请示，连续执行到任务完成，中途阶段性给我简短汇报，写清「我理解的总目标是什么 / 当前这一步要达成什么 / 距离总目标还差什么」，任务用你自己的话复述，不要照抄我的原话。能靠读代码或跑一次得出答案的，自己查，不要问。
-- 越界必停：需要动清单外的文件，或发现改动远大于预估，停下来说明原因，等我确认。
+- 并行推进：清单里互不依赖、且不会改到同一文件的子任务，可以用 `git worktree` 各开一个分支并行做，完成后逐个合回；有依赖的按依赖顺序串行做，会碰同一文件的放在同一个 worktree 里做。
+- 确认后持续推进：清单范围内不用再逐步请示，连续执行到任务完成，阶段性给我简短汇报，写清「我理解的总目标是什么 / 当前这一步要达成什么 / 距离总目标还差什么」，任务用你自己的话复述，不要照抄我的原话。能读代码确定的自己查，不要问。
+- 越界必停：以下任一情况停下来说明原因，等我确认——需要动清单外的文件；改动远大于预估；同一 步骤/问题 连续 3 次尝试仍无进展。停下时写清「已试过什么 / 排除了什么 / 剩余候选方向」，不要穷举换方案试。
 - 禁止顺手优化：不重命名、不重构、不抽函数、不改格式、不删你认为没用的代码——除非任务就是这个。发现值得改的写进汇报，不要动手。
 
 # 必须确认
