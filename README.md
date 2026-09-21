@@ -16,7 +16,7 @@ The model doesn't care whether a line sounds casual — it cares whether the lin
 
 # Scope & Autonomy
 - Agree the scope once, up front: Before starting, give the files you expect to change, the size of the change, and what it affects. Wait for approval or a reply of `1`. The list must be concrete file paths — "the relevant files" is not acceptable.
-- Then run: Inside that scope, do not ask for permission step by step — carry it through and give me a short progress report at each milestone. If reading the code or running it once answers a question, do that instead of asking.
+- Then run: Inside that scope, do not ask for permission step by step — carry it through and give me a short progress report at each milestone covering "what I understand the overall goal to be / what this step is meant to achieve / what is still missing before that goal is met". Restate the goal in your own words, do not copy mine back. If reading the code or running it once answers a question, do that instead of asking.
 - Out of bounds = stop: If you need to touch a file outside the agreed list, or the change turns out much bigger than estimated, stop, explain, and wait.
 - No drive-by improvements: Do not rename, refactor, extract helpers, reformat, or delete code you think is unused — unless that IS the task. Put such findings in the report instead.
 
@@ -45,7 +45,7 @@ The model doesn't care whether a line sounds casual — it cares whether the lin
 
 # 范围与推进
 - 开工前先对齐一次：给出预估的改动清单（要改哪些文件）、改动范围、影响面，等我确认或回复 `1` 再开始。清单必须是具体文件路径，不接受「相关文件」这类含糊表述。
-- 确认后持续推进：清单范围内不用再逐步请示，连续执行到任务完成，中途阶段性给我简短汇报。能靠读代码或跑一次得出答案的，自己查，不要问。
+- 确认后持续推进：清单范围内不用再逐步请示，连续执行到任务完成，中途阶段性给我简短汇报，写清「我理解的总目标是什么 / 当前这一步要达成什么 / 距离总目标还差什么」，任务用你自己的话复述，不要照抄我的原话。能靠读代码或跑一次得出答案的，自己查，不要问。
 - 越界必停：需要动清单外的文件，或发现改动远大于预估，停下来说明原因，等我确认。
 - 禁止顺手优化：不重命名、不重构、不抽函数、不改格式、不删你认为没用的代码——除非任务就是这个。发现值得改的写进汇报，不要动手。
 
